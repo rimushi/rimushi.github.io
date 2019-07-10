@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/6 | sunny的博客</title>
+  <title>jenkins自动化构建和部署 | sunny的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="sunny的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2019/06/index.html">
+  <meta name="description" content="Jenkins配合gitlab可以构建自动化部署的前端项目。Jenkins是开源的,使用Java编写的持续集成的工具，在Centos上可以通过yum命令行直接安装。记录下安装的过程，方便以后查找。需要先安装Java,如果已经Java可以跳过该步骤。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jenkins自动化构建和部署">
+<meta property="og:url" content="http://yoursite.com/2019/07/10/jenkins/index.html">
 <meta property="og:site_name" content="sunny的博客">
+<meta property="og:description" content="Jenkins配合gitlab可以构建自动化部署的前端项目。Jenkins是开源的,使用Java编写的持续集成的工具，在Centos上可以通过yum命令行直接安装。记录下安装的过程，方便以后查找。需要先安装Java,如果已经Java可以跳过该步骤。">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-10T02:24:23.327Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sunny的博客">
+<meta name="twitter:title" content="jenkins自动化构建和部署">
+<meta name="twitter:description" content="Jenkins配合gitlab可以构建自动化部署的前端项目。Jenkins是开源的,使用Java编写的持续集成的工具，在Centos上可以通过yum命令行直接安装。记录下安装的过程，方便以后查找。需要先安装Java,如果已经Java可以跳过该步骤。">
   
     <link rel="alternative" href="/atom.xml" title="sunny的博客" type="application/atom+xml">
   
@@ -138,76 +142,179 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-jenkins" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/28/js-design-pattern/" class="archive-article-date">
-  	<time datetime="2019-06-28T02:01:30.530Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-28</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/28/js-design-pattern/">javascript 设计模式</a>
+    <h1 class="article-title" itemprop="name">
+      jenkins自动化构建和部署
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/27/hello-world/" class="archive-article-date">
-  	<time datetime="2019-06-27T09:05:49.136Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-27</time>
+        
+        <a href="/2019/07/10/jenkins/" class="archive-article-date">
+  	<time datetime="2019-07-10T01:41:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-10</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/27/hello-world/">个人博客</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Jenkins配合gitlab可以构建自动化部署的前端项目。Jenkins是开源的,使用Java编写的持续集成的工具，在Centos上可以通过yum命令行直接安装。记录下安装的过程，方便以后查找。需要先安装Java,如果已经Java可以跳过该步骤。</p>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
-          
+<h3 id="1-安装Java"><a href="#1-安装Java" class="headerlink" title="1.安装Java"></a>1.安装Java</h3><p>  看到当前系统Java版本的命令:<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure></p>
+<p>  如果显示Java版本号，说明已经正确安装，如果显示没有该命令，需要安装Java：<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install java</span><br></pre></td></tr></table></figure></p>
+<p>  该命令如果检测到Java不存在可以直接安装Java,如果已存在则可以升级Java。</p>
+<h3 id="2-安装Jenkins"><a href="#2-安装Jenkins" class="headerlink" title="2.安装Jenkins"></a>2.安装Jenkins</h3><p>  首先要先添加Jenkins源:<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo wget -O /etc/yum.repos.d/jenkins.repo http://jenkins-ci.org/redhat/jenkins.repo</span><br><span class="line">sudo rpm --import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key（如果想安装稳定版本redhat替换成redhat-stable）</span><br></pre></td></tr></table></figure></p>
+<p>  添加完成之后直接使用yum命令安装Jenkins:<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install jenkins</span><br></pre></td></tr></table></figure></p>
+<p>  或者使用下面的方式安装jenkens<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war</span><br><span class="line">sudo java -jar jenkens.war</span><br></pre></td></tr></table></figure></p>
+<p>  如果8080端口被占用可以尝试使用 sudo java -jar jenkins.war –httpPort=8081 来启动端口,这个是临时的<br>  如果永久修改需要改动/etc/sysconfig/jenkins这里的端口</p>
+<h3 id="3-启动Jenkins"><a href="#3-启动Jenkins" class="headerlink" title="3.启动Jenkins"></a>3.启动Jenkins</h3><p>  使用命令启动Jenkins:<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service jenkins start显示Starting Jenkins                      [ OK ]</span><br></pre></td></tr></table></figure></p>
+<p>  然后在浏览器中输入：http://&lt;服务器ip&gt;:8080/ 就可以进入Jenkins界面直接使用了 。<br>  停止Jenkins服务的命令为：<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service jenkins stop</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-如果页面打不开考虑以下两个配置"><a href="#4-如果页面打不开考虑以下两个配置" class="headerlink" title="4.如果页面打不开考虑以下两个配置"></a>4.如果页面打不开考虑以下两个配置</h3><p>  如果浏览器还是打不开，需要查看阿里云是否开放8080端口，可以去实例–安全组配置–配置规则里面–添加安全组规则<br>  编辑端口范围8080/8080，授权对象0.0.0.0/0<br>  另一个是防火墙问题<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl stop firewalld.service   <span class="comment">#停止firewall       </span></span><br><span class="line">sudo systemctl <span class="built_in">disable</span> firewalld.service <span class="comment">#禁止firewall开机启动</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="5-安装jenkins后，在系统管理的插件管理安装依赖的插件"><a href="#5-安装jenkins后，在系统管理的插件管理安装依赖的插件" class="headerlink" title="5.安装jenkins后，在系统管理的插件管理安装依赖的插件"></a>5.安装jenkins后，在系统管理的插件管理安装依赖的插件</h3><p>   GitHub  GitLab Plugin 和 Gitlab Hook Plugin和Build Authorization Token Root Plugin插件和Gitlab Authentication plugin插件</p>
+<h3 id="6-安装jenkins后，是需要安装git的-centos-linux下的安装git"><a href="#6-安装jenkins后，是需要安装git的-centos-linux下的安装git" class="headerlink" title="6.安装jenkins后，是需要安装git的,  centos/linux下的安装git"></a>6.安装jenkins后，是需要安装git的,  centos/linux下的安装git</h3><p>  下载git<br>      <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/git/git/archive/v2.14.1.zip</span><br></pre></td></tr></table></figure></p>
+<p>  安装依赖<br>      <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum -y install zlib-devel openssl-devel cpio expat-devel gettext-devel curl-devel perl-ExtUtils-CBuilder perl-ExtUtils-MakeMaker</span><br></pre></td></tr></table></figure></p>
+<p>  解压git<br>      <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip v2.14.1.zip</span><br></pre></td></tr></table></figure></p>
+<p>  将git安装到/usr/local上,先进入git文件夹<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> git-2.14.1</span><br><span class="line">make prefix=/usr/<span class="built_in">local</span> all</span><br><span class="line">make prefix=/usr/<span class="built_in">local</span> install</span><br></pre></td></tr></table></figure></p>
+<p>  验证是否安装完成<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure></p>
+<h3 id="7-配置公钥密钥"><a href="#7-配置公钥密钥" class="headerlink" title="7.配置公钥密钥"></a>7.配置公钥密钥</h3><p>  切到jenkins用户<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su - jenkins</span><br></pre></td></tr></table></figure></p>
+<p>  新建ssh-key<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure></p>
+<p>  查看公钥密钥<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure></p>
+<p>  复制公钥放到gitlab的上新增一个ssh<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure></p>
+<p>  复制私钥放到jenkins上新增一个Credentials,其中Kind的选项SSH Username with private key,然后Scope选项Global  </p>
+<p>  通过新建项目即可实现gitlab和jenkins的通信</p>
+<h3 id="8-新升级的jenkins需要配置token才能使用web-hook来触发自动构建（更新为第9条）"><a href="#8-新升级的jenkins需要配置token才能使用web-hook来触发自动构建（更新为第9条）" class="headerlink" title="8.新升级的jenkins需要配置token才能使用web hook来触发自动构建（更新为第9条）"></a>8.新升级的jenkins需要配置token才能使用web hook来触发自动构建（更新为第9条）</h3><ol>
+<li>为了令牌的安全性，我们在使用openssl生成一个<br>openssl rand -hex 10   比如生成0a37c6d7ba1fe3472e26<br>在jenkins上某个项目里面的构建触发器标签下，勾选触发远程构建（使用脚本）<br>身份验证令牌里面填写上面生成的令牌</li>
+<li>然后再gitlab某个项目下的webhook 里面填写<br><a href="http://x.x.x.x:8080/buildByToken/build?job=项目名称&amp;token=0a37c6d7ba1fe3472e26" target="_blank" rel="noopener">http://x.x.x.x:8080/buildByToken/build?job=项目名称&amp;token=0a37c6d7ba1fe3472e26</a></li>
+<li>在jenkinss全局安全配置里面要取消防止跨站点请求伪造的选择</li>
+</ol>
+<h3 id="9-由于步骤8不同版本不好实现，可以改为用Poll-SCM"><a href="#9-由于步骤8不同版本不好实现，可以改为用Poll-SCM" class="headerlink" title="9.由于步骤8不同版本不好实现，可以改为用Poll SCM"></a>9.由于步骤8不同版本不好实现，可以改为用Poll SCM</h3><p>   定时每隔一分钟去取仓库代码更好实现，语法如下<br>   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*/1 * * * *</span><br></pre></td></tr></table></figure></p>
+<h3 id="10-构建Execute-shell里面的代码如下"><a href="#10-构建Execute-shell里面的代码如下" class="headerlink" title="10.构建Execute shell里面的代码如下"></a>10.构建Execute shell里面的代码如下</h3>   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p <span class="string">"/usr/local/nginx/html/xg/franchise-platform"</span></span><br><span class="line"><span class="built_in">cd</span> <span class="string">"/usr/local/nginx/html/xg/franchise-platform"</span></span><br><span class="line">mkdir -p <span class="string">"<span class="variable">$&#123;GIT_BRANCH#origin/daily/&#125;</span>"</span></span><br><span class="line">cp -f -R <span class="string">"<span class="variable">$&#123;WORKSPACE&#125;</span>/dist/."</span> <span class="string">"<span class="variable">$&#123;GIT_BRANCH#origin/daily/&#125;</span>"</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="备注1-解决jenkins系统日志过大问题"><a href="#备注1-解决jenkins系统日志过大问题" class="headerlink" title="备注1 解决jenkins系统日志过大问题"></a>备注1 解决jenkins系统日志过大问题</h3><p>1、每次手动删除 /var/log/jenkins/jenkins.log 该文件，<br>2、而且删除后需要重启下jenkin，<a href="http://xxxxxxxxxx:8080/restart" target="_blank" rel="noopener">http://xxxxxxxxxx:8080/restart</a><br>备注 用命令重启则用下面的语句<br>sudo /etc/init.d/jenkins restart</p>
+<h3 id="备注2"><a href="#备注2" class="headerlink" title="备注2"></a>备注2</h3><p>推荐使用最简单的配置“Poll SCM”，它的意思是，定时检查版本库，发现有新的提交就触发构建。<br>这种方式对git、SVN等所有版本管理系统都是通用的。<br>Poll SCM：(轮询供应链管理) 定时检查源码变更（根据SCM软件的版本号），如果有更新就checkout最新code下来，然后执行构建动作。我的配置如下<br>*/5 * * * *  （每5分钟检查一次源码变化）<br>Build periodically：周期进行项目构建（它不care源码是否发生变化），我的配置如下：<br>0 2 * * *  （每天2:00 必须build一次源码）</p>
+<p>你也可以使用诸如${GIT_BRANCH##origin/}和之类的令牌宏做类似的事情${GIT_BRANCH#*/}。<br>这些工作在一些Jenkins插件中，但不是全部，所以它可能无法在Git Publisher中工作。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/10/jenkins/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/07/10/web-native/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Native APP 和 web APP 的对比
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2019/07/09/gitlab/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">gitlab搭建整理</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -230,8 +337,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
