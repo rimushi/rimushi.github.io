@@ -26,6 +26,7 @@
     <link rel="icon" href="/favicon.png">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
+
   <style type="text/css">
   
     #container.show {
@@ -200,6 +201,13 @@
 <p>你也可以使用诸如${GIT_BRANCH##origin/}和之类的令牌宏做类似的事情${GIT_BRANCH#*/}。<br>这些工作在一些Jenkins插件中，但不是全部，所以它可能无法在Git Publisher中工作。</p>
 
       
+      
+
+     
+      
+        <div class="declare" hidden="hidden"></div>
+      
+
 
       
     </div>
@@ -301,6 +309,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-安装Java"><span class="toc-number">1.</span> <span class="toc-text">1.安装Java</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-安装Jenkins"><span class="toc-number">2.</span> <span class="toc-text">2.安装Jenkins</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-启动Jenkins"><span class="toc-number">3.</span> <span class="toc-text">3.启动Jenkins</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-如果页面打不开考虑以下两个配置"><span class="toc-number">4.</span> <span class="toc-text">4.如果页面打不开考虑以下两个配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-安装jenkins后，在系统管理的插件管理安装依赖的插件"><span class="toc-number">5.</span> <span class="toc-text">5.安装jenkins后，在系统管理的插件管理安装依赖的插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-安装jenkins后，是需要安装git的-centos-linux下的安装git"><span class="toc-number">6.</span> <span class="toc-text">6.安装jenkins后，是需要安装git的,  centos/linux下的安装git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-配置公钥密钥"><span class="toc-number">7.</span> <span class="toc-text">7.配置公钥密钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-新升级的jenkins需要配置token才能使用web-hook来触发自动构建（更新为第9条）"><span class="toc-number">8.</span> <span class="toc-text">8.新升级的jenkins需要配置token才能使用web hook来触发自动构建（更新为第9条）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-由于步骤8不同版本不好实现，可以改为用Poll-SCM"><span class="toc-number">9.</span> <span class="toc-text">9.由于步骤8不同版本不好实现，可以改为用Poll SCM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-构建Execute-shell里面的代码如下"><span class="toc-number">10.</span> <span class="toc-text">10.构建Execute shell里面的代码如下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#备注1-解决jenkins系统日志过大问题"><span class="toc-number">11.</span> <span class="toc-text">备注1 解决jenkins系统日志过大问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#备注2"><span class="toc-number">12.</span> <span class="toc-text">备注2</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -332,6 +353,7 @@
     </div>
   </div>
 </footer>
+
     </div>
     <script>
 	var yiliaConfig = {

@@ -16,7 +16,7 @@
 <meta property="og:description" content="前段时间看了《深入浅出webpack》书籍, 讲了前端发展史，感觉把一些零散的知识系统了讲了一下；受益匪浅。现在把书籍的收获和总结如下：">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/img3.png">
-<meta property="og:updated_time" content="2019-07-09T09:23:13.129Z">
+<meta property="og:updated_time" content="2019-07-10T09:30:45.420Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack前端资源模块化管理和打包工具">
 <meta name="twitter:description" content="前段时间看了《深入浅出webpack》书籍, 讲了前端发展史，感觉把一些零散的知识系统了讲了一下；受益匪浅。现在把书籍的收获和总结如下：">
@@ -28,6 +28,7 @@
     <link rel="icon" href="/favicon.png">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
+
   <style type="text/css">
   
     #container.show {
@@ -190,6 +191,13 @@
 <p>Webpack 启动后会从 Entry 里配置的 Module 开始递归解析 Entry 依赖的所有 Module。<br>每找到一个 Module， 就会根据配置的 Loader 去找出对应的转换规则，对 Module 进行转换后，<br>再解析出当前 Module 依赖的 Module。 这些模块会以 Entry 为单位进行分组，一个 Entry 和其<br>所有依赖的 Module 被分到一个组也就是一个 Chunk。最后 Webpack 会把所有 Chunk 转换成文<br>件输出。 在整个流程中 Webpack 会在恰当的时机执行 Plugin 里定义的逻辑。</p>
 
       
+      
+
+     
+      
+        <div class="declare" hidden="hidden"></div>
+      
+
 
       
     </div>
@@ -291,6 +299,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前端的发展-–-模块化"><span class="toc-number">1.</span> <span class="toc-text">前端的发展 – 模块化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前端的发展-–-新框架"><span class="toc-number">2.</span> <span class="toc-text">前端的发展 – 新框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前端的发展-–-新语言"><span class="toc-number">3.</span> <span class="toc-text">前端的发展 – 新语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常见的构建工具及对比"><span class="toc-number">4.</span> <span class="toc-text">常见的构建工具及对比</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#webpack是什么"><span class="toc-number">5.</span> <span class="toc-text">webpack是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用Loader和Plugin"><span class="toc-number">6.</span> <span class="toc-text">使用Loader和Plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用DevServer"><span class="toc-number">7.</span> <span class="toc-text">使用DevServer</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -322,6 +343,7 @@
     </div>
   </div>
 </footer>
+
     </div>
     <script>
 	var yiliaConfig = {
