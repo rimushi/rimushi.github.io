@@ -6,15 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | sunny的博客</title>
+  <title>基于vue开发组件并发布到npm | sunny的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="sunny的博客">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="目前比较流行的vue组件库是elementUI; 如果想自己开发一个组件可供人使用，或者是一个团队开发一个组件库，该文可为开发插件并上线到npm可供参考。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于vue开发组件并发布到npm">
+<meta property="og:url" content="http://yoursite.com/2019/07/18/vue-package-npm/index.html">
 <meta property="og:site_name" content="sunny的博客">
+<meta property="og:description" content="目前比较流行的vue组件库是elementUI; 如果想自己开发一个组件可供人使用，或者是一个团队开发一个组件库，该文可为开发插件并上线到npm可供参考。">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/images/img5.jpg">
+<meta property="og:updated_time" content="2019-07-18T07:50:28.848Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sunny的博客">
+<meta name="twitter:title" content="基于vue开发组件并发布到npm">
+<meta name="twitter:description" content="目前比较流行的vue组件库是elementUI; 如果想自己开发一个组件可供人使用，或者是一个团队开发一个组件库，该文可为开发插件并上线到npm可供参考。">
+<meta name="twitter:image" content="http://yoursite.com/images/img5.jpg">
   
     <link rel="alternative" href="/atom.xml" title="sunny的博客" type="application/atom+xml">
   
@@ -139,298 +145,205 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-vue-package-npm" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      基于vue开发组件并发布到npm
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/18/vue-package-npm/" class="archive-article-date">
+
+        
+        <a href="/2019/07/18/vue-package-npm/" class="archive-article-date">
   	<time datetime="2019-07-18T06:33:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-18</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/18/vue-package-npm/">基于vue开发组件并发布到npm</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>目前比较流行的vue组件库是elementUI; 如果想自己开发一个组件可供人使用，或者是一个团队开发一个组件库，<br>该文可为开发插件并上线到npm可供参考。</p>
+<a id="more"></a>
+<h3 id="1-创建项目"><a href="#1-创建项目" class="headerlink" title="1. 创建项目"></a>1. 创建项目</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vue create xxx</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<h3 id="2-调整目录"><a href="#2-调整目录" class="headerlink" title="2. 调整目录"></a>2. 调整目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">...</span><br><span class="line">|-- examples      // 原 src 目录，改成 examples 用作示例展示</span><br><span class="line">|-- packages      // 新增 packages 用于编写存放组件</span><br><span class="line">...</span><br><span class="line">.</span><br></pre></td></tr></table></figure>
 
+<h3 id="3-新增文件-vue-config-js，配置如下"><a href="#3-新增文件-vue-config-js，配置如下" class="headerlink" title="3. 新增文件 vue.config.js，配置如下"></a>3. 新增文件 vue.config.js，配置如下</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  // 修改 src 为 examples</span><br><span class="line">  pages: &#123;</span><br><span class="line">    index: &#123;</span><br><span class="line">      entry: <span class="string">'examples/main.js'</span>,</span><br><span class="line">      template: <span class="string">'public/index.html'</span>,</span><br><span class="line">      filename: <span class="string">'index.html'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  // 扩展 webpack 配置，使 packages 加入编译</span><br><span class="line">  chainWebpack: config =&gt; &#123;</span><br><span class="line">    config.module</span><br><span class="line">      .rule(<span class="string">'js'</span>)</span><br><span class="line">      .include</span><br><span class="line">        .add(<span class="string">'packages'</span>)</span><br><span class="line">        .end()</span><br><span class="line">      .use(<span class="string">'babel'</span>)</span><br><span class="line">        .loader(<span class="string">'babel-loader'</span>)</span><br><span class="line">        .tap(options =&gt; &#123;</span><br><span class="line">          // 修改它的选项...</span><br><span class="line">          <span class="built_in">return</span> options</span><br><span class="line">        &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-在package文件夹下编写组件，目录如下"><a href="#4-在package文件夹下编写组件，目录如下" class="headerlink" title="4. 在package文件夹下编写组件，目录如下"></a>4. 在package文件夹下编写组件，目录如下</h3><p><img src="/images/img5.jpg" alt="示例图片"></p>
+<ul>
+<li><p>在 packages 目录下，新建名为如photo-preview文件夹，新建src文件并创建组件源码photo-preview.vue</p>
+</li>
+<li><p>在 photo-preview目录下创建 index.js 文件对外提供对组件的引用。</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># /packages/photo-preview/index.js</span></span><br><span class="line">// 导入组件，组件必须声明 name</span><br><span class="line">import photoPreview from <span class="string">'./src/photo-preview.vue'</span></span><br><span class="line"> </span><br><span class="line">// 为组件提供 install 安装方法，供按需引入</span><br><span class="line">photo-preview.install = <span class="keyword">function</span> (Vue) &#123;</span><br><span class="line">  Vue.component(photoPreview.name, photoPreview)</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">// 默认导出组件</span><br><span class="line"><span class="built_in">export</span> default photoPreview</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改 /packages/index.js 文件，对整个组件库进行导出</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">// 导入颜色选择器组件</span><br><span class="line">import photoPreview from <span class="string">'./color-picker'</span></span><br><span class="line"> </span><br><span class="line">// 存储组件列表</span><br><span class="line">const components = [</span><br><span class="line">  photoPreview</span><br><span class="line">]</span><br><span class="line"> </span><br><span class="line">// 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册</span><br><span class="line">const install = <span class="keyword">function</span> (Vue) &#123;</span><br><span class="line">  // 判断是否安装</span><br><span class="line">  <span class="keyword">if</span> (install.installed) <span class="built_in">return</span></span><br><span class="line">  // 遍历注册全局组件</span><br><span class="line">  components.map(component =&gt; Vue.component(component.name, component))</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">// 判断是否是直接引入文件</span><br><span class="line"><span class="keyword">if</span> (typeof window !== <span class="string">'undefined'</span> &amp;&amp; window.Vue) &#123;</span><br><span class="line">  install(window.Vue)</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  // 导出的对象必须具有 install，才能被 Vue.use() 方法安装</span><br><span class="line">  install,</span><br><span class="line">  // 以下是具体的组件列表</span><br><span class="line">  photoPreview</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-在example文件夹下写导入组件库的示例"><a href="#4-在example文件夹下写导入组件库的示例" class="headerlink" title="4.在example文件夹下写导入组件库的示例"></a>4.在example文件夹下写导入组件库的示例</h3><ul>
+<li><p>导入组件库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import Vue from <span class="string">'vue'</span></span><br><span class="line">import App from <span class="string">'./App.vue'</span></span><br><span class="line"> </span><br><span class="line">// 导入组件库</span><br><span class="line">import photoPreview from <span class="string">'./../packages/index'</span></span><br><span class="line">// 注册组件库</span><br><span class="line">Vue.use(photoPreview)</span><br><span class="line"> </span><br><span class="line">Vue.config.productionTip = <span class="literal">false</span></span><br><span class="line"> </span><br><span class="line">new Vue(&#123;</span><br><span class="line">  render: h =&gt; h(App)</span><br><span class="line">&#125;).<span class="variable">$mount</span>(<span class="string">'#app'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用组件<br>在上一步用使用 Vue.use() 全局注册后，即可在任意页面直接使用了，而不需另外引入。当然也可以按需引入。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=<span class="string">"app"</span>&gt;    </span><br><span class="line">      &lt;photo-preview :msg=<span class="string">"msgTxt"</span>&gt;&lt;/photo-preview&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="built_in">export</span> default &#123;</span><br><span class="line">  name: <span class="string">'app'</span>,  </span><br><span class="line">  <span class="function"><span class="title">data</span></span> () &#123;</span><br><span class="line">      <span class="built_in">return</span> &#123;   </span><br><span class="line">        msgTxt: <span class="string">"你好"</span>       </span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="5-发布到-npm服务器，可供下载使用"><a href="#5-发布到-npm服务器，可供下载使用" class="headerlink" title="5 发布到 npm服务器，可供下载使用"></a>5 发布到 npm服务器，可供下载使用</h3><ul>
+<li>编译成库，package.json 中新增一条编译为库的命令<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    // ...</span><br><span class="line">    <span class="string">"lib"</span>: <span class="string">"vue-cli-service build --target lib --name vue-photo-preview-mobile --dest lib packages/index.js"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>发布之前需要执行编译库命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run lib</span><br></pre></td></tr></table></figure>
+
+<p>注意在配置packages.json文件的时候，version: 版本号，每次发布至 npm 需要修改版本号，不能和历史版本号相同。为了方便用户使用请编写README.md供用户阅读</p>
+<ul>
+<li>使用npm adduser 或者npm login (注册或登录到 npm)<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm login</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>需要输入npm账号，密码，邮箱</p>
+<ul>
+<li>发布到库<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm publish</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>发布成功后可以再npm线上服务器上查询到，并可以利用npm install xxxx 安装使用</p>
+<p>demo示例 <a href="https://github.com/rimushi/vue-photo-preview-mobile" target="_blank" rel="noopener">vue-photo-preview-mobile</a></p>
+<blockquote>
+<p>备注：<br>HTML 中的特性名是大小写不敏感的，所以浏览器会把所有大写字符解释为小写字符。这意味着当你使用 DOM 中的模板时，camelCase (驼峰命名法) 的 prop 名需要使用其等价的 kebab-case (短横线分隔命名) 命名：</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/18/vue-package-npm/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/10/informal-essay/" class="archive-article-date">
-  	<time datetime="2019-07-10T09:08:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-10</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/10/informal-essay/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">随笔</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/10/informal-essay/">随笔</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-创建项目"><span class="toc-number">1.</span> <span class="toc-text">1. 创建项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-调整目录"><span class="toc-number">2.</span> <span class="toc-text">2. 调整目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-新增文件-vue-config-js，配置如下"><span class="toc-number">3.</span> <span class="toc-text">3. 新增文件 vue.config.js，配置如下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-在package文件夹下编写组件，目录如下"><span class="toc-number">4.</span> <span class="toc-text">4. 在package文件夹下编写组件，目录如下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-在example文件夹下写导入组件库的示例"><span class="toc-number">5.</span> <span class="toc-text">4.在example文件夹下写导入组件库的示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-发布到-npm服务器，可供下载使用"><span class="toc-number">6.</span> <span class="toc-text">5 发布到 npm服务器，可供下载使用</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/10/web-native/" class="archive-article-date">
-  	<time datetime="2019-07-10T02:28:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-10</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/10/web-native/">Native APP 和 web APP 的对比</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/10/jenkins/" class="archive-article-date">
-  	<time datetime="2019-07-10T01:41:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/10/jenkins/">jenkins自动化构建和部署</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/09/gitlab/" class="archive-article-date">
-  	<time datetime="2019-07-09T09:32:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/09/gitlab/">gitlab搭建整理</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">主页</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/09/webpack/" class="archive-article-date">
-  	<time datetime="2019-07-09T08:52:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/09/webpack/">webpack前端资源模块化管理和打包工具</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/09/react-native/" class="archive-article-date">
-  	<time datetime="2019-07-09T08:31:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/09/react-native/">react-native开发环境搭建和思考</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/28/js-design-pattern/" class="archive-article-date">
-  	<time datetime="2019-06-28T02:01:30.530Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/28/js-design-pattern/">javascript 设计模式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/27/hello-world/" class="archive-article-date">
-  	<time datetime="2019-06-27T09:05:49.136Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/27/hello-world/">个人博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">主页</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -454,8 +367,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
