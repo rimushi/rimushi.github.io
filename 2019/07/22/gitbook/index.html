@@ -16,7 +16,7 @@
 <meta property="og:description" content="电子书来可以很直观和系统的展示内容，今天来总结一下如何使用gitbook制作电子书的，并发布到github上面。  由于gitbook服务器加载速度不稳定，慢的时候都打不开了，所以想着直接把gitbook的Markdown文件内容编译成静态页面，发布到github仓库中，利用gh-pages直接访问，速度快多了。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/img6.jpg">
-<meta property="og:updated_time" content="2019-07-23T03:27:36.158Z">
+<meta property="og:updated_time" content="2019-07-23T06:37:48.001Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用gitbook制作电子书">
 <meta name="twitter:description" content="电子书来可以很直观和系统的展示内容，今天来总结一下如何使用gitbook制作电子书的，并发布到github上面。  由于gitbook服务器加载速度不稳定，慢的时候都打不开了，所以想着直接把gitbook的Markdown文件内容编译成静态页面，发布到github仓库中，利用gh-pages直接访问，速度快多了。">
@@ -210,7 +210,7 @@
 
 <h4 id="13-这时候gh-pages分支下就是全部的静态页面文件了，接下来就是提交到远程gh-pages分支"><a href="#13-这时候gh-pages分支下就是全部的静态页面文件了，接下来就是提交到远程gh-pages分支" class="headerlink" title="13. 这时候gh-pages分支下就是全部的静态页面文件了，接下来就是提交到远程gh-pages分支"></a>13. 这时候gh-pages分支下就是全部的静态页面文件了，接下来就是提交到远程gh-pages分支</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">'publish gh-pages'</span></span><br><span class="line">git push origin gh-pages</span><br></pre></td></tr></table></figure>
 
-<h4 id="14-设置gh-pages服务为自动开启"><a href="#14-设置gh-pages服务为自动开启" class="headerlink" title="14. 设置gh-pages服务为自动开启"></a>14. 设置gh-pages服务为自动开启</h4><p>在GitHub上setting下的Source中选择gh-pages branch，如下图：</p>
+<h4 id="14-设置gh-pages服务为自动开启"><a href="#14-设置gh-pages服务为自动开启" class="headerlink" title="14. 设置gh-pages服务为自动开启"></a>14. 设置gh-pages服务为自动开启</h4><p>在gitbook-note仓库下的setting中的Source中选择gh-pages branch，如下图：</p>
 <p><img src="/images/img6.jpg" alt></p>
 <p>这个时候远程地址 <a href="https://rimushi.github.io/gitbook-note/" target="_blank" rel="noopener">https://rimushi.github.io/gitbook-note/</a> 即可打开访问</p>
 <h4 id="15-电子书每次修改，本地需要切回到master分支开发"><a href="#15-电子书每次修改，本地需要切回到master分支开发" class="headerlink" title="15. 电子书每次修改，本地需要切回到master分支开发"></a>15. 电子书每次修改，本地需要切回到master分支开发</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br></pre></td></tr></table></figure>
