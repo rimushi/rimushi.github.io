@@ -6,21 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>使用gitbook制作电子书 | sunny的博客</title>
+  <title>sunny的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="电子书来可以很直观和系统的展示内容，今天来总结一下如何使用gitbook制作电子书的，并发布到github上面。由于gitbook服务器加载速度不稳定，慢的时候都打不开了，所以想着直接把gitbook的Markdown文件内容编译成静态页面，发布到github仓库中，利用gh-pages直接访问，速度快多了。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="使用gitbook制作电子书">
-<meta property="og:url" content="http://yoursite.com/2019/07/22/gitbook/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="sunny的博客">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="sunny的博客">
-<meta property="og:description" content="电子书来可以很直观和系统的展示内容，今天来总结一下如何使用gitbook制作电子书的，并发布到github上面。由于gitbook服务器加载速度不稳定，慢的时候都打不开了，所以想着直接把gitbook的Markdown文件内容编译成静态页面，发布到github仓库中，利用gh-pages直接访问，速度快多了。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/images/img6.jpg">
-<meta property="og:updated_time" content="2019-08-06T03:43:09.356Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用gitbook制作电子书">
-<meta name="twitter:description" content="电子书来可以很直观和系统的展示内容，今天来总结一下如何使用gitbook制作电子书的，并发布到github上面。由于gitbook服务器加载速度不稳定，慢的时候都打不开了，所以想着直接把gitbook的Markdown文件内容编译成静态页面，发布到github仓库中，利用gh-pages直接访问，速度快多了。">
-<meta name="twitter:image" content="http://yoursite.com/images/img6.jpg">
+<meta name="twitter:title" content="sunny的博客">
   
     <link rel="alternative" href="/atom.xml" title="sunny的博客" type="application/atom+xml">
   
@@ -145,78 +139,32 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-gitbook" class="article article-type-post " itemscope itemprop="blogPost">
+            
+  
+    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      使用gitbook制作电子书
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/27/hello-world/">个人博客</a>
     </h1>
   
 
         
-        <a href="/2019/07/22/gitbook/" class="archive-article-date">
-  	<time datetime="2019-07-22T09:59:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-22</time>
+        <a href="/2019/06/27/hello-world/" class="archive-article-date">
+  	<time datetime="2019-06-27T09:05:49.136Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>电子书来可以很直观和系统的展示内容，今天来总结一下如何使用gitbook制作电子书的，并发布到github上面。<br>由于gitbook服务器加载速度不稳定，慢的时候都打不开了，所以想着直接把gitbook的Markdown文件内容编译成静态页面，发布到github仓库中，利用gh-pages直接访问，速度快多了。</p>
-<a id="more"></a>
-
-<blockquote>
-<p><a href="https://github.com/rimushi/gitbook-note" target="_blank" rel="noopener">本文仓库地址</a><br> <a href="https://rimushi.github.io/gitbook-note" target="_blank" rel="noopener">本文电子书demo地址</a></p>
-</blockquote>
-<h4 id="1-在github上新建一个仓库"><a href="#1-在github上新建一个仓库" class="headerlink" title="1.在github上新建一个仓库"></a>1.在github上新建一个仓库</h4><p>仓库命名为gitbook-note,然后克隆到本地</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/rimushi/gitbook-note.git</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-在本地安装gitbook-推荐使用cnpm安装"><a href="#2-在本地安装gitbook-推荐使用cnpm安装" class="headerlink" title="2.在本地安装gitbook(推荐使用cnpm安装)"></a>2.在本地安装gitbook(推荐使用cnpm安装)</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install gitbook-cli -g</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-执行命令初始化一本电子书"><a href="#3-执行命令初始化一本电子书" class="headerlink" title="3. 执行命令初始化一本电子书"></a>3. 执行命令初始化一本电子书</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitbook init</span><br></pre></td></tr></table></figure>
-
-<p>之后本地会生成两个文件 README.md 和 SUMMARY.md ，这两个文件一个为介绍，一个为目录结构。</p>
-<h4 id="4-在-SUMMARY-md-文件中添加目录如下"><a href="#4-在-SUMMARY-md-文件中添加目录如下" class="headerlink" title="4.在 SUMMARY.md 文件中添加目录如下"></a>4.在 SUMMARY.md 文件中添加目录如下</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Summary</span></span><br><span class="line"></span><br><span class="line">* [介绍](README.md)</span><br><span class="line">* [设计模式](installation/README.md)</span><br><span class="line">    * [1构造函数模式](installation/1.md)</span><br><span class="line">    * [2模块化模式](installation/2.md)</span><br><span class="line">    * [3暴露模块模式](installation/3.md)</span><br><span class="line">    * [4构造函数模式](installation/4.md)</span><br><span class="line">    * [5模块化模式](installation/5.md)</span><br><span class="line">    * [6暴露模块模式](installation/6.md)</span><br><span class="line">    * [7原型模式](installation/7.md)</span><br><span class="line">    * [8命令模式](installation/8.md)</span><br><span class="line">    * [9外观模式](installation/9.md)</span><br><span class="line">    * [10工厂模式](installation/10.md)</span><br><span class="line">    * [11装饰者模式](installation/11.md)</span><br><span class="line">    * [12享元模式](installation/12.md)</span><br></pre></td></tr></table></figure>
-
-<p>执行命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitbook init</span><br></pre></td></tr></table></figure>
-
-<p>对目录进行初始化,会在对应文件目录下生成相应的.md文件</p>
-<h4 id="5-在-README-md-文件中添加目录如下"><a href="#5-在-README-md-文件中添加目录如下" class="headerlink" title="5.在 README.md 文件中添加目录如下"></a>5.在 README.md 文件中添加目录如下</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># js设计模式</span></span><br><span class="line">使用 gitbook 制作在线电子书</span><br><span class="line"><span class="comment">## 本项目地址</span></span><br><span class="line">- 仓库：https://github.com/rimushi/gitbook-note</span><br><span class="line">- 在线阅读：https://rimushi.github.io/gitbook-note</span><br></pre></td></tr></table></figure>
-
-<h4 id="6-配置文件"><a href="#6-配置文件" class="headerlink" title="6.配置文件"></a>6.配置文件</h4><p>新建book.json并配置参数，该文件来配置整本书的基本信息，结构，使用的插件等等。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"title"</span>: <span class="string">"js设计模式"</span>,</span><br><span class="line">  <span class="string">"author"</span>: <span class="string">"rimushi"</span>,</span><br><span class="line">  <span class="string">"description"</span>: <span class="string">"js设计模式介绍"</span>,</span><br><span class="line">  <span class="string">"keywords"</span>: <span class="string">"js设计模式手册,markdown,gitbook,"</span>,</span><br><span class="line">  <span class="string">"introduction"</span>: &#123;</span><br><span class="line">    <span class="string">"path"</span>: <span class="string">"README.md"</span>,</span><br><span class="line">    <span class="string">"title"</span>: <span class="string">"js设计模式"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"plugins"</span>: [</span><br><span class="line">    <span class="string">"image-captions"</span>,</span><br><span class="line">    <span class="string">"splitter"</span>,</span><br><span class="line">    <span class="string">"expandable-chapters-small"</span>,</span><br><span class="line">    <span class="string">"-mathjax"</span>,</span><br><span class="line">    <span class="string">"ga"</span>,</span><br><span class="line">    <span class="string">"disqus"</span>,</span><br><span class="line">    <span class="string">"-lunr"</span>,</span><br><span class="line">    <span class="string">"-search"</span>,</span><br><span class="line">    <span class="string">"search-pro"</span>,</span><br><span class="line">    <span class="string">"sitemap"</span>,</span><br><span class="line">    <span class="string">"localized-footer"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">"pluginsConfig"</span>: &#123;</span><br><span class="line">    <span class="string">"theme-default"</span>: &#123;</span><br><span class="line">      <span class="string">"showLevel"</span>: <span class="literal">true</span></span><br><span class="line">    &#125;,   </span><br><span class="line">    <span class="string">"image-captions"</span>: &#123;</span><br><span class="line">      <span class="string">"caption"</span>: <span class="string">"Image - _CAPTION_"</span>,</span><br><span class="line">      <span class="string">"align"</span>: <span class="string">"center"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"expandable-chapters-small"</span>: &#123;&#125;,</span><br><span class="line">    <span class="string">"fontSettings"</span>: &#123;</span><br><span class="line">      <span class="string">"theme"</span>: <span class="string">"white"</span>,</span><br><span class="line">      <span class="string">"family"</span>: <span class="string">"serif"</span>,</span><br><span class="line">      <span class="string">"size"</span>: 2</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"ga"</span>: &#123;</span><br><span class="line">      <span class="string">"token"</span>: <span class="string">"UA-60753376-1"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"disqus"</span>: &#123;</span><br><span class="line">      <span class="string">"shortName"</span>: <span class="string">"gitbook-note"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"search-pro"</span>: &#123;</span><br><span class="line">      <span class="string">"cutWordLib"</span>: <span class="string">"nodejieba"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"sitemap"</span>: &#123;</span><br><span class="line">      <span class="string">"hostname"</span>: <span class="string">"https://rimushi.github.io/"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"localized-footer"</span>: &#123;</span><br><span class="line">      <span class="string">"hline"</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="string">"filename"</span>: <span class="string">"./FOOTER.md"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"links"</span>: &#123;</span><br><span class="line">    <span class="string">"home"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="string">"about"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="string">"issues"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="string">"contribute"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="string">"sidebar"</span>: &#123;</span><br><span class="line">      <span class="string">"博客地址"</span>: <span class="string">"https://rimushi.github.io/"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"tail"</span>: &#123;</span><br><span class="line">      <span class="string">"js设计模式"</span>: <span class="string">"http://rimushi.github.io/gitbook-note"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"gitbook"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="string">"sharing"</span>: &#123;</span><br><span class="line">      <span class="string">"google"</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="string">"facebook"</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="string">"twitter"</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="string">"weibo"</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="string">"qrcode"</span>: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"pdf"</span>: &#123;</span><br><span class="line">    <span class="string">"toc"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"pageNumbers"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"fontSize"</span>: 12,</span><br><span class="line">    <span class="string">"paperSize"</span>: <span class="string">"a4"</span>,</span><br><span class="line">    <span class="string">"margin"</span>: &#123;</span><br><span class="line">      <span class="string">"right"</span>: 62,</span><br><span class="line">      <span class="string">"left"</span>: 62,</span><br><span class="line">      <span class="string">"top"</span>: 36,</span><br><span class="line">      <span class="string">"bottom"</span>: 36</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>执行以下命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitbook install</span><br></pre></td></tr></table></figure>
-
-<p>根据配置安装相关插件。</p>
-<h4 id="7-本地预览"><a href="#7-本地预览" class="headerlink" title="7. 本地预览"></a>7. 本地预览</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitbook serve</span><br></pre></td></tr></table></figure>
-
-<p>默认监听本地 4000 端口，在浏览器打开 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 即可浏览电子书</p>
-<h4 id="8-把本地代码提交到远程master分支"><a href="#8-把本地代码提交到远程master分支" class="headerlink" title="8. 把本地代码提交到远程master分支"></a>8. 把本地代码提交到远程master分支</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">'first commit'</span></span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-
-<h4 id="9-如果需要预览线上电子书，需要在本地创建新分支"><a href="#9-如果需要预览线上电子书，需要在本地创建新分支" class="headerlink" title="9. 如果需要预览线上电子书，需要在本地创建新分支"></a>9. 如果需要预览线上电子书，需要在本地创建新分支</h4><p>本地创建一个gh-pages分支，如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout --orphan gh-pages</span><br></pre></td></tr></table></figure>
-
-<h4 id="10-然后清空一下分支下的文件（如果有的话）"><a href="#10-然后清空一下分支下的文件（如果有的话）" class="headerlink" title="10. 然后清空一下分支下的文件（如果有的话）"></a>10. 然后清空一下分支下的文件（如果有的话）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf *</span><br></pre></td></tr></table></figure>
-
-<h4 id="11-然后将master分支下的-book静态页面文件内容全部复制到新分支下"><a href="#11-然后将master分支下的-book静态页面文件内容全部复制到新分支下" class="headerlink" title="11. 然后将master分支下的_book静态页面文件内容全部复制到新分支下"></a>11. 然后将master分支下的_book静态页面文件内容全部复制到新分支下</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout master -- _book</span><br></pre></td></tr></table></figure>
-
-<h4 id="12-将-book中的子文件全部移到外层，并删除-book"><a href="#12-将-book中的子文件全部移到外层，并删除-book" class="headerlink" title="12. 将_book中的子文件全部移到外层，并删除_book"></a>12. 将_book中的子文件全部移到外层，并删除_book</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mv _book/* ./</span><br><span class="line">rm -rf _book</span><br></pre></td></tr></table></figure>
-
-<h4 id="13-这时候gh-pages分支下就是全部的静态页面文件了，接下来就是提交到远程gh-pages分支"><a href="#13-这时候gh-pages分支下就是全部的静态页面文件了，接下来就是提交到远程gh-pages分支" class="headerlink" title="13. 这时候gh-pages分支下就是全部的静态页面文件了，接下来就是提交到远程gh-pages分支"></a>13. 这时候gh-pages分支下就是全部的静态页面文件了，接下来就是提交到远程gh-pages分支</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">'publish gh-pages'</span></span><br><span class="line">git push origin gh-pages</span><br></pre></td></tr></table></figure>
-
-<h4 id="14-设置gh-pages服务为自动开启"><a href="#14-设置gh-pages服务为自动开启" class="headerlink" title="14. 设置gh-pages服务为自动开启"></a>14. 设置gh-pages服务为自动开启</h4><p>在gitbook-note仓库下的setting中的Source中选择gh-pages branch，如下图：</p>
-<p><img src="/images/img6.jpg" alt></p>
-<p>这个时候远程地址 <a href="https://rimushi.github.io/gitbook-note/" target="_blank" rel="noopener">https://rimushi.github.io/gitbook-note/</a> 即可打开访问</p>
-<h4 id="15-电子书每次修改，本地需要切回到master分支开发"><a href="#15-电子书每次修改，本地需要切回到master分支开发" class="headerlink" title="15. 电子书每次修改，本地需要切回到master分支开发"></a>15. 电子书每次修改，本地需要切回到master分支开发</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br></pre></td></tr></table></figure>
-
-<p>重复以上步骤即可实现电子书的更新以及发布。</p>
-
+        <p> <a href="https://pages.github.com/" target="_blank" rel="noopener">GitPage</a> 提供的强大平台，可以轻松搭建个 Blog<br> <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a> 提供强大能力支撑轻松写 Blog</p>
+        
+          <a class="article-more-a" href="/2019/06/27/hello-world/#more">more >></a>
+        
       
 
       
@@ -224,87 +172,30 @@
     <div class="article-info article-info-index">
       
       
-      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">主页</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
       
 
       
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/27/hello-world/">阅读详情 >></a>
+        </p>
+      
 
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/22/gitbook/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/08/06/flex/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          flex
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/07/18/vue-package-npm/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">基于vue开发组件并发布到npm</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -319,34 +210,17 @@
         </div>
         
         
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-在github上新建一个仓库"><span class="toc-number">1.</span> <span class="toc-text">1.在github上新建一个仓库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-在本地安装gitbook-推荐使用cnpm安装"><span class="toc-number">2.</span> <span class="toc-text">2.在本地安装gitbook(推荐使用cnpm安装)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-执行命令初始化一本电子书"><span class="toc-number">3.</span> <span class="toc-text">3. 执行命令初始化一本电子书</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-在-SUMMARY-md-文件中添加目录如下"><span class="toc-number">4.</span> <span class="toc-text">4.在 SUMMARY.md 文件中添加目录如下</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-在-README-md-文件中添加目录如下"><span class="toc-number">5.</span> <span class="toc-text">5.在 README.md 文件中添加目录如下</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-配置文件"><span class="toc-number">6.</span> <span class="toc-text">6.配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-本地预览"><span class="toc-number">7.</span> <span class="toc-text">7. 本地预览</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-把本地代码提交到远程master分支"><span class="toc-number">8.</span> <span class="toc-text">8. 把本地代码提交到远程master分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-如果需要预览线上电子书，需要在本地创建新分支"><span class="toc-number">9.</span> <span class="toc-text">9. 如果需要预览线上电子书，需要在本地创建新分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-然后清空一下分支下的文件（如果有的话）"><span class="toc-number">10.</span> <span class="toc-text">10. 然后清空一下分支下的文件（如果有的话）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-然后将master分支下的-book静态页面文件内容全部复制到新分支下"><span class="toc-number">11.</span> <span class="toc-text">11. 然后将master分支下的_book静态页面文件内容全部复制到新分支下</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12-将-book中的子文件全部移到外层，并删除-book"><span class="toc-number">12.</span> <span class="toc-text">12. 将_book中的子文件全部移到外层，并删除_book</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-这时候gh-pages分支下就是全部的静态页面文件了，接下来就是提交到远程gh-pages分支"><span class="toc-number">13.</span> <span class="toc-text">13. 这时候gh-pages分支下就是全部的静态页面文件了，接下来就是提交到远程gh-pages分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14-设置gh-pages服务为自动开启"><span class="toc-number">14.</span> <span class="toc-text">14. 设置gh-pages服务为自动开启</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#15-电子书每次修改，本地需要切回到master分支开发"><span class="toc-number">15.</span> <span class="toc-text">15. 电子书每次修改，本地需要切回到master分支开发</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
     </div>
 </aside>
 
 
 
-  
-  
-  
 
   
-
   
-
-  
-
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
   
 
 
@@ -370,8 +244,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

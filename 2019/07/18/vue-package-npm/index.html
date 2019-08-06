@@ -16,7 +16,7 @@
 <meta property="og:description" content="目前比较流行的vue组件库是elementUI; 如果想自己开发一个组件可供人使用，或者是一个团队开发一个组件库，该文可为开发插件并上线到npm可供参考。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/images/img5.jpg">
-<meta property="og:updated_time" content="2019-07-18T08:05:40.711Z">
+<meta property="og:updated_time" content="2019-08-06T03:41:40.564Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于vue开发组件并发布到npm">
 <meta name="twitter:description" content="目前比较流行的vue组件库是elementUI; 如果想自己开发一个组件可供人使用，或者是一个团队开发一个组件库，该文可为开发插件并上线到npm可供参考。">
@@ -167,6 +167,8 @@
       
         <p>目前比较流行的vue组件库是elementUI; 如果想自己开发一个组件可供人使用，或者是一个团队开发一个组件库，<br>该文可为开发插件并上线到npm可供参考。</p>
 <a id="more"></a>
+
+<p>demo示例 <a href="https://github.com/rimushi/vue-photo-preview-mobile" target="_blank" rel="noopener">vue-photo-preview-mobile</a></p>
 <h3 id="1-创建项目"><a href="#1-创建项目" class="headerlink" title="1. 创建项目"></a>1. 创建项目</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vue create xxx</span><br></pre></td></tr></table></figure>
 
 <h3 id="2-调整目录"><a href="#2-调整目录" class="headerlink" title="2. 调整目录"></a>2. 调整目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">...</span><br><span class="line">|-- examples      // 原 src 目录，改成 examples 用作示例展示</span><br><span class="line">|-- packages      // 新增 packages 用于编写存放组件</span><br><span class="line">...</span><br><span class="line">.</span><br></pre></td></tr></table></figure>
@@ -217,7 +219,6 @@
 </li>
 </ul>
 <p>发布成功后可以再npm线上服务器上查询到，并可以利用npm install xxxx 安装使用</p>
-<p>demo示例 <a href="https://github.com/rimushi/vue-photo-preview-mobile" target="_blank" rel="noopener">vue-photo-preview-mobile</a></p>
 <blockquote>
 <p>备注：<br>HTML 中的特性名是大小写不敏感的，所以浏览器会把所有大写字符解释为小写字符。这意味着当你使用 DOM 中的模板时，camelCase (驼峰命名法) 的 prop 名需要使用其等价的 kebab-case (短横线分隔命名) 命名：</p>
 </blockquote>
