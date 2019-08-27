@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Native APP 和 web APP 的对比 | sunny的博客</title>
+  <title>函数节流和函数去抖 | sunny的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="之前有人问过一个这样的问题，后来我就做了一个简单的技术分享，现在整理一下，感觉对于非前端人员也能大致了解一下这两种技术的区别。">
+  <meta name="description" content="函数的节流和函数的去抖都是通过减少实际逻辑处理过程的执行来提高事件处理函数运行性能的手段，并没有实质上减少事件的触发次数。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Native APP 和 web APP 的对比">
-<meta property="og:url" content="http://yoursite.com/2019/07/10/web-native/index.html">
+<meta property="og:title" content="函数节流和函数去抖">
+<meta property="og:url" content="http://yoursite.com/2019/08/27/optimize/index.html">
 <meta property="og:site_name" content="sunny的博客">
-<meta property="og:description" content="之前有人问过一个这样的问题，后来我就做了一个简单的技术分享，现在整理一下，感觉对于非前端人员也能大致了解一下这两种技术的区别。">
+<meta property="og:description" content="函数的节流和函数的去抖都是通过减少实际逻辑处理过程的执行来提高事件处理函数运行性能的手段，并没有实质上减少事件的触发次数。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-10T02:51:12.814Z">
+<meta property="og:updated_time" content="2019-08-27T11:04:39.062Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Native APP 和 web APP 的对比">
-<meta name="twitter:description" content="之前有人问过一个这样的问题，后来我就做了一个简单的技术分享，现在整理一下，感觉对于非前端人员也能大致了解一下这两种技术的区别。">
+<meta name="twitter:title" content="函数节流和函数去抖">
+<meta name="twitter:description" content="函数的节流和函数的去抖都是通过减少实际逻辑处理过程的执行来提高事件处理函数运行性能的手段，并没有实质上减少事件的触发次数。">
   
     <link rel="alternative" href="/atom.xml" title="sunny的博客" type="application/atom+xml">
   
@@ -143,51 +143,43 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-web-native" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-optimize" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Native APP 和 web APP 的对比
+      函数节流和函数去抖
     </h1>
   
 
         
-        <a href="/2019/07/10/web-native/" class="archive-article-date">
-  	<time datetime="2019-07-10T02:28:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-10</time>
+        <a href="/2019/08/27/optimize/" class="archive-article-date">
+  	<time datetime="2019-08-27T08:49:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>之前有人问过一个这样的问题，后来我就做了一个简单的技术分享，现在整理一下，感觉对于非前端人员也能大致了解一下这两种技术的区别。</p>
+        <p>函数的节流和函数的去抖都是通过减少实际逻辑处理过程的执行来提高事件处理函数运行性能的手段，并没有实质上减少事件的触发次数。</p>
 <a id="more"></a>
 
-<h3 id="什么是-Web-App、Hybrid-App、-Native-App"><a href="#什么是-Web-App、Hybrid-App、-Native-App" class="headerlink" title="什么是 Web App、Hybrid App、 Native App"></a>什么是 Web App、Hybrid App、 Native App</h3><p><strong>Web  APP</strong><br>Web App 指采用Html5语言写出的App，不需要下载安装。类似于现在所说的轻应用。生存在浏览器中的应用，基本上<br>可以说是触屏版的网页应用。<br><strong>Hybrid  App</strong><br>Hybrid APP指的是半原生半Web的混合类App。需要下载安装，看上去类似Native App。Hybrid App 极力去打造类似于Native App 的体验，但仍受限于技术，网速，等等很多因素。尚不完美。<br><strong>Native  App</strong><br>Native APP 指的是原生程序，一般依托于操作系统，有很强的交互，是一个完整的App，可拓展性强。需要用户下载安装使用。</p>
-<h3 id="Native-APP的优点"><a href="#Native-APP的优点" class="headerlink" title="Native APP的优点"></a>Native APP的优点</h3><p>打造完美的用户体验,性能稳定,<br>操作速度快，上手流畅<br>访问本地资源（通讯录，相册）<br>设计出色的动效，转场，<br>拥有系统级别的通知或提醒<br>用户留存率高(更多体现注册用户数、用户活动率等所)</p>
-<h3 id="Native-APP的缺点"><a href="#Native-APP的缺点" class="headerlink" title="Native APP的缺点"></a>Native APP的缺点</h3><p>分发成本高（不同平台有不同的开发语言和界面适配）<br>维护成本高（例如一款App已更新至V5版本，但仍有用户在使用V2， V3， V4版本，需要更多的开发人员维护之前的版本）<br>更新缓慢，根据不同平台，提交–审核–上线 等等不同的流程，需要经过的流程较复杂</p>
-<h3 id="Web-APP的优点"><a href="#Web-APP的优点" class="headerlink" title="Web APP的优点"></a>Web APP的优点</h3><p>跨平台能够在多个平台和终端运行<br>免安装打开浏览器，就能使用<br>快速部署升级只需要在服务区更新代码，无需通知用户手动升级<br>超链接可以与其他网站互连，可以被搜索引擎检索</p>
-<h3 id="Web-APP的缺点"><a href="#Web-APP的缺点" class="headerlink" title="Web APP的缺点"></a>Web APP的缺点</h3><p>性能相对较低，对于复杂的交互，比如3D特效，频繁的输入输出等等，即使实现了，在用户体验上也要减分<br>运行速度受网络影响。不适合处理复杂的逻辑等等<br>目前还没能控制和充分利用智能手机各种各样的硬件功能</p>
-<h3 id="综合评述"><a href="#综合评述" class="headerlink" title="综合评述"></a>综合评述</h3><p>在跨平台上，HTML5胜出<br>在用户体验和表现上原生APP开发胜出<br>在开发速度和成本方面，HTML5胜出<br>在版本控制和BUG修复方面，HTML5胜出</p>
-<blockquote>
-<p>现在做H5混合APP开发的人很多，但是纯H5却很年轻；如果将来有一天，Web app会成为主流，一定有一个前提，那就是它的性能可以赶上Native app。</p>
-</blockquote>
-<h3 id="Web-app的性能瓶颈，主要有以下原因"><a href="#Web-app的性能瓶颈，主要有以下原因" class="headerlink" title="Web app的性能瓶颈，主要有以下原因"></a>Web app的性能瓶颈，主要有以下原因</h3><p>（1）<strong>Web基于DOM，而DOM很慢</strong><br>　　浏览器打开网页时，需要解析文档，在内存中生成DOM结构，如果遇到复杂的文档，这个过程是很慢的。可以想象一下，如果网页上有上万个、甚至几十万个形状（不管是图片或CSS），生成DOM需要多久？更不要提与其中某一个形状互动了。</p>
-<p>（2）<strong>DOM拖慢JavaScript</strong><br>　所有的DOM操作都是同步的，会堵塞浏览器。JavaScript操作DOM时，必须等前一个操作结束，才能执行后一个操作。只要一个操作有卡顿，整个网页就会短暂失去响应。浏览器重绘网页的频率是60FPS（即16毫秒/帧），JavaScript做不到在16毫秒内完成DOM操作，因此产生了跳帧。用户体验上的不流畅、不连贯就源于此。</p>
-<p>（3）<strong>网页是单线程的</strong><br>　　现在的浏览器对于每个网页，只用一个线程处理。所有工作都在这一个线程上完成，包括布局、渲染、JavaScript执行、图像解码等等，怎么可能不慢？</p>
-<p>（4）<strong>网页没有硬件加速</strong><br>　　网页都是由CPU处理的，没用GPU进行图形加速。</p>
-<blockquote>
-<p>上面这些原因，对于PC还不至于造成严重的性能问题，但是手机的硬件资源相对有限，用户互动又相对频繁，结果跟Native app一比，就完全落在了下风。</p>
-</blockquote>
-<h3 id="未来的路"><a href="#未来的路" class="headerlink" title="未来的路"></a>未来的路</h3><p>（1）<strong>多线程浏览器</strong><br>每个网页应该由多个线程进行处理，主线程只负责布局和渲染，而且应该在16毫秒内完成，JavaScript由worker线程执行，这样就不会发生堵塞了。</p>
-<p>（2）<strong>DOM的异步操作</strong><br>JavaScript对DOM的操作不再是同步的，而是触发后，交给Event Loop机制进行监听。</p>
-<p>（3）<strong>非DOM方案</strong>浏览器不再将网页处理成DOM结构，而是变为其他结构。React的虚拟DOM方案就是这一类的尝试，还有更激进的方案，比如用数据库取代DOM。</p>
-<blockquote>
-<p>在APP与H5的技术之争中，乐观派认为H5技术将彻底终结APP；认为从技术和用户使用习惯与体验的演变来看，在PC时代从最初的C/S到后来B/S架构使用的普遍应用，随着浏览器的成长，带宽的增加，HTML5的技术标准成熟，或许不久的将来会是WebAPP的世界。</p>
-</blockquote>
+<h4 id="1-函数节流（throttle）"><a href="#1-函数节流（throttle）" class="headerlink" title="1.函数节流（throttle）"></a>1.函数节流（throttle）</h4><p>间隔一段时间执行一次回调的场景有：<br>滚动加载，加载更多或滚到底部监听,scroll事件<br>谷歌搜索框，搜索联想功能<br>高频点击提交，表单重复提交</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**函数节流**/</span></span><br><span class="line"><span class="comment">//函数预先设定一个执行周期，当调用动作的时刻大于等于执行周期则执行该动作，然后进入下一个新周期</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">method,duration</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span>  begin=<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	    <span class="keyword">var</span> context=<span class="keyword">this</span>, args=<span class="built_in">arguments</span>, current=<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">	    <span class="keyword">if</span>(current-begin&gt;=duration)&#123;</span><br><span class="line">	         method.apply(context,args);</span><br><span class="line">	         begin=current;</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>测试</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">resizehandler</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(++n);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">window</span>.onresize=throttle(resizehandler,<span class="number">500</span>);</span><br></pre></td></tr></table></figure>
+
+<p>线上代码运行地址：<br><a href="https://codepen.io/rimushi/pen/mdbmEZd?editors=1111" target="_blank" rel="noopener">https://codepen.io/rimushi/pen/mdbmEZd?editors=1111</a></p>
+<h4 id="2-函数去抖（debounce）"><a href="#2-函数去抖（debounce）" class="headerlink" title="2.函数去抖（debounce）"></a>2.函数去抖（debounce）</h4><p>连续的事件，只需触发一次回调的场景有：<br>搜索框搜索输入。只需用户最后一次输入完，再发送请求<br>手机号、邮箱验证输入检测<br>窗口大小Resize。只需窗口调整完成后，计算窗口大小。防止重复渲染。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**函数的去抖动**/</span></span><br><span class="line"><span class="comment">//函数调用n秒后才会执行，如果函数在n秒内被调用的话则函数不执行，重新计算执行时间</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">method,delay</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> timer=<span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> context=<span class="keyword">this</span>, args=<span class="built_in">arguments</span>;</span><br><span class="line">        clearTimeout(timer);</span><br><span class="line">        timer=setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            method.apply(context,args);</span><br><span class="line">        &#125;,delay);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>测试</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">resizehandler</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(++n);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">window</span>.onresize=debounce(resizehandler,<span class="number">500</span>);</span><br></pre></td></tr></table></figure>
+
+<p>线上代码运行地址：<br><a href="https://codepen.io/rimushi/pen/mdbmEZd?editors=1112" target="_blank" rel="noopener">https://codepen.io/rimushi/pen/mdbmEZd?editors=1112</a></p>
 
       
 
@@ -246,7 +238,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/10/web-native/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/27/optimize/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -260,18 +252,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/10/informal-essay/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          随笔
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/07/10/jenkins/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">jenkins自动化构建和部署</div>
+    <a href="/2019/08/27/inherit/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js实现继承的几种方式</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -298,7 +281,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是-Web-App、Hybrid-App、-Native-App"><span class="toc-number">1.</span> <span class="toc-text">什么是 Web App、Hybrid App、 Native App</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Native-APP的优点"><span class="toc-number">2.</span> <span class="toc-text">Native APP的优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Native-APP的缺点"><span class="toc-number">3.</span> <span class="toc-text">Native APP的缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web-APP的优点"><span class="toc-number">4.</span> <span class="toc-text">Web APP的优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web-APP的缺点"><span class="toc-number">5.</span> <span class="toc-text">Web APP的缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#综合评述"><span class="toc-number">6.</span> <span class="toc-text">综合评述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web-app的性能瓶颈，主要有以下原因"><span class="toc-number">7.</span> <span class="toc-text">Web app的性能瓶颈，主要有以下原因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#未来的路"><span class="toc-number">8.</span> <span class="toc-text">未来的路</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-函数节流（throttle）"><span class="toc-number">1.</span> <span class="toc-text">1.函数节流（throttle）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-函数去抖（debounce）"><span class="toc-number">2.</span> <span class="toc-text">2.函数去抖（debounce）</span></a></li></ol>
                     </div>
                 </span>
             </div>
