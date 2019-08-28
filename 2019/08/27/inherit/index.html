@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="sunny的博客">
 <meta property="og:description" content="首先要了解一下js中原型链的概念：原型链：当对象使用属性的时候，现在自身进行查找，有就直接使用，没有就沿着proto这条链继续往下查找，直到找到Object原型位置，有就返回相应的值，没有就返回underfined">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-27T11:28:58.973Z">
+<meta property="og:updated_time" content="2019-08-28T06:27:14.137Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js实现继承的几种方式">
 <meta name="twitter:description" content="首先要了解一下js中原型链的概念：原型链：当对象使用属性的时候，现在自身进行查找，有就直接使用，没有就沿着proto这条链继续往下查找，直到找到Object原型位置，有就返回相应的值，没有就返回underfined">
@@ -180,11 +180,11 @@
 <p>该继承有以下缺点：<br>1.只能继承父类的实例属性和方法，不能继承原型属性/方法<br>2.无法实现函数复用，每个子类都有父类实例函数的副本，影响性能</p>
 <h4 id="3-组合继承（常用）"><a href="#3-组合继承（常用）" class="headerlink" title="3. 组合继承（常用）"></a>3. 组合继承（常用）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  Animal.call(<span class="keyword">this</span>); <span class="comment">//第一次调用构造函数</span></span><br><span class="line">  <span class="keyword">this</span>.name = name || <span class="string">'Tom'</span>;</span><br><span class="line">&#125;</span><br><span class="line">Cat.prototype = <span class="keyword">new</span> Animal();</span><br><span class="line"><span class="comment">//组合继承也是需要修复构造函数指向的</span></span><br><span class="line">Cat.prototype.constructor = Cat;</span><br><span class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Cat(); <span class="comment">//第二次调用构造函数</span></span><br></pre></td></tr></table></figure>
 
-<p>缺点：调用了两次父类构造函数</p>
+<p>线上代码地址：<a href="https://codepen.io/rimushi/pen/LYPyJWo?editors=1111" target="_blank" rel="noopener">https://codepen.io/rimushi/pen/LYPyJWo?editors=1111</a><br>缺点：调用了两次父类构造函数</p>
 <h4 id="4-寄生组合继承（常用）"><a href="#4-寄生组合继承（常用）" class="headerlink" title="4. 寄生组合继承（常用）"></a>4. 寄生组合继承（常用）</h4><p>通过寄生方式，砍掉父类的实例属性，这样，在调用两次父类的构造的时候，就不会初始化两次实例方法/属性，避免的组合继承的缺点</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  Animal.call(<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">this</span>.name = name || <span class="string">'Tom'</span>;</span><br><span class="line">&#125;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">// 创建一个没有实例方法的类</span></span><br><span class="line">  <span class="keyword">var</span> Super = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">  Super.prototype = Animal.prototype;</span><br><span class="line">  <span class="comment">//将实例作为子类的原型</span></span><br><span class="line">  Cat.prototype = <span class="keyword">new</span> Super();</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Cat();</span><br><span class="line">Cat.prototype.constructor = Cat; <span class="comment">// 需要修复下构造函数</span></span><br></pre></td></tr></table></figure>
 
-<p>缺点：实现较复杂</p>
+<p>线上代码地址：<a href="https://codepen.io/rimushi/pen/MWgmPdw?editors=1112" target="_blank" rel="noopener">https://codepen.io/rimushi/pen/MWgmPdw?editors=1112</a><br>缺点：实现较复杂</p>
 
       
 
